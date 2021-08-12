@@ -3,10 +3,10 @@ package com.example.apimetrobus.services;
 import com.example.apimetrobus.repositories.AlcaldiaRepository;
 import com.example.apimetrobus.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.querydsl.binding.OptionalValueBinding;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class AlcaldiaService {
@@ -14,8 +14,12 @@ public class AlcaldiaService {
     AlcaldiaRepository alcaldiaRepository;
 
 
-    public ArrayList<AlcaldiasModel> obtenerAlcaldiaNombre(String nombre){
-        return alcaldiaRepository.findByNombre(nombre);
+    public ArrayList<AlcaldiasModel> obtenerAlcaldiaNombre(String alcaldia){
+        return alcaldiaRepository.findByNombre(alcaldia);
+    }
+
+    public Optional<AlcaldiasModel> obtenerPorId(Long id){
+        return alcaldiaRepository.findById(id);
     }
 
     public ArrayList<AlcaldiasModel> obtenerAlcaldias(){
