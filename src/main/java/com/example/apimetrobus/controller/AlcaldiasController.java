@@ -15,8 +15,6 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 
-import javax.print.DocFlavor.STRING;
-
 @RestController
 @RequestMapping("/alcaldias")
 public class AlcaldiasController {
